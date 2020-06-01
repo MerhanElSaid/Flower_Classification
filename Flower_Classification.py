@@ -179,12 +179,12 @@ for param in vgg16.features.parameters():
 # 
 # You can access any layer in a pretrained network by name and (sometimes) number, i.e. `vgg16.classifier[6]` is the sixth layer in a group of layers named "classifier".
 # 
-# #### TODO: Replace the last fully-connected layer with one that produces the appropriate number of class scores.
+# Replace the last fully-connected layer with one that produces the appropriate number of class scores.
 
 # In[10]:
 
 
-## TODO: add a last linear layer  that maps n_inputs -> 5 flower classes
+## last linear layer  that maps n_inputs -> 5 flower classes
 ## new layers automatically have requires_grad = True
 import torch.nn as nn
 vgg16.classifier[6] = nn.Linear(4096, 5)
@@ -326,8 +326,6 @@ for idx in np.arange(20):
     ax.set_title("{} ({})".format(classes[preds[idx]], classes[labels[idx]]),
                  color=("green" if preds[idx]==labels[idx].item() else "red"))
 
-
-# In[ ]:
 
 
 
